@@ -40,21 +40,18 @@ function generatePassword() {
     passwordOptions = passwordOptions.concat(specialCharacters)
   }
 
-var password = "";
+  var password = "";
   for (let i = 0; i < charactersLength; i++) {
     var randomCharacter = passwordOptions[Math.floor(Math.random() * passwordOptions.length)]
     password = password + randomCharacter
   }
-
-  return alert(password)
-  
+  return alert("Your password is: " + password)
 }
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 generateBtn.addEventListener("click", writePassword);
