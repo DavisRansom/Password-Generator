@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -41,25 +40,14 @@ function generatePassword() {
     passwordOptions = passwordOptions.concat(specialCharacters)
   }
 
+var password = "";
   for (let i = 0; i < charactersLength; i++) {
-
+    var randomCharacter = passwordOptions[Math.floor(Math.random() * passwordOptions.length)]
+    password = password + randomCharacter
   }
 
-  passwordOptions[Math.floor(Math.random() * charactersLength)]
-  console.log(passwordOptions)
-  //create variables for arrays: lowercase, uppercase, numbers, specialcharacters
-
-
-
-
-
-
-  //run random selection from the updatedArray (ex. lowerCase.upperCase), charactersNumber number of times
-  //var randomString = Math.random() 
-
-  //Display the result in the Password Generator or as an alert
-
-  //Write password to the #password alert of Password text area
+  return alert(password)
+  
 }
 function writePassword() {
   var password = generatePassword();
@@ -69,5 +57,4 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
